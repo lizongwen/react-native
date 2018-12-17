@@ -18,6 +18,12 @@ const instructions = Platform.select({
 
 // type Props = {};
 export default class App extends Component{
+	componentDidMount(){
+		console.log(this.props)
+		setTimeout(function(){
+			console.log(8888)
+		},2000)
+	}
   render() {
     return (
       <View style={styles.container}>
