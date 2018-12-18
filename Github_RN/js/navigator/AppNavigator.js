@@ -1,6 +1,7 @@
 import { createStackNavigator, createSwitchNavigator, createAppContainer} from "react-navigation";
 import WelcomePage from '../page/WelcomePage';
 import HomePage from '../page/HomePage';
+import DetailPage from '../page/DetailPage'; 
 
 const InitNavigator = createStackNavigator({
 	WelcomePage: {
@@ -17,6 +18,12 @@ const MainNavigator = createStackNavigator({
 			header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
 		}
 	},
+	DetailPage: {
+		screen: DetailPage,
+		navigationOptions: {
+			
+		}
+	}
 });
 export default createAppContainer(createSwitchNavigator({
 	Init: InitNavigator,
