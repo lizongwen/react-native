@@ -8,18 +8,14 @@ import NavigationUtil from '../navigator/NavigationUtil';
 import DynamicTabNavigator from '../navigator/DynamicTabNavigator';
 
 class HomePage extends Component {
-	// constructor(props) {
-	// 	super(props);
-	// 	this.backPress = new BackPressComponent({ backPress: this.onBackPress() });
-	// }
 	componentDidMount() {
-
 		BackHandler.addEventListener("hardwareBackPress", this.onBackPress);
 	}
 
 	componentWillUnmount() {
 		BackHandler.removeEventListener("hardwareBackPress", this.onBackPress);
 	}
+
 	onBackPress = () => {
 		const { dispatch, nav } = this.props;
 		//if (nav.index === 0) {
@@ -29,6 +25,7 @@ class HomePage extends Component {
 		dispatch(NavigationActions.back());
 		return true;
 	}
+	
 	render() {
 		NavigationUtil.navigation = this.props.navigation;
 		return <DynamicTabNavigator />
@@ -36,6 +33,6 @@ class HomePage extends Component {
 }
 
 const mapStateToProps = state => ({
-	nav:state.nav
+	nav: state.nav
 });
 export default connect(mapStateToProps)(HomePage);
