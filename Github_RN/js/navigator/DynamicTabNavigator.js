@@ -5,17 +5,15 @@ import { createBottomTabNavigator, createAppContainer } from "react-navigation";
 import { StyleSheet, Text, View } from 'react-native';
 import { BottomTabBar } from 'react-navigation-tabs'
 
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+import Entypo from 'react-native-vector-icons/Entypo';
 // type Props = {};
 import PopularPage from '../page/PopularPage';
 import TrendingPage from '../page/TrendingPage';
 import FavoritePage from '../page/FavoritePage';
 import MyPage from '../page/MyPage';
-
-import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import Entypo from 'react-native-vector-icons/Entypo';
-
-
+import NavigationUtil from './NavigationUtil';
 
 
 const TABS = {
@@ -63,19 +61,23 @@ class DynamicTabNavigator extends Component {
 		console.disableYellowBox = true;//禁止警告的信息输出
 	}
 	_tabNavigator() {
+		if(this.Tabs){
+			return this.Tabs;
+		}
 		const { PopularPage, TrendingPage, FavoritePage, MyPage } = TABS;
 		const tabs = {
 			PopularPage, TrendingPage, FavoritePage, MyPage//根据需要定制显示tab选项
 		}
 		PopularPage.navigationOptions.tabBarLabel = "最新";//修改底部tab文字
-		return createAppContainer(createBottomTabNavigator(tabs, {
+		return this.Tabs=createAppContainer(createBottomTabNavigator(tabs, {
 			// tabBarComponent: TabBarComponent
 			tabBarComponent: props => {
-				return <TabBarComponent theme={this.props.theme} />
+				return <TabBarComponent theme={this.props.theme}  {...props}/>
 			}
 		}));
 	}
 	render() {
+		// NavigationUtil.navigation=this.props.navigation;
 		const Tab = this._tabNavigator();
 		return <Tab />
 	}
@@ -89,15 +91,16 @@ class TabBarComponent extends Component {
 		}
 	}
 	render() {
-		const { routes, index } = this.props.navigation.state;
-		if (routes[index].params) {
-			const { theme } = routes[index].params;
-			//以最新的更新时间为主,防止被其他tab之前的修改覆盖掉
-			if (theme && theme.updateTime > this.theme.updateTime) {
-				this.theme = theme;
-			}
-		}
-		return <BottomTabBar {...this.props} activeTintColor={this.theme.tintColor || this.props.activeTintColor} />
+		// const { routes, index } = this.props.navigation.state;
+		// if (routes[index].params) {
+		// 	const { theme } = routes[index].params;
+		// 	//以最新的更新时间为主,防止被其他tab之前的修改覆盖掉
+		// 	if (theme && theme.updateTime > this.theme.updateTime) {
+		// 		this.theme = theme;
+		// 	}
+		// }
+		// return <BottomTabBar {...this.props} activeTintColor={this.theme.tintColor || this.props.activeTintColor} />
+		return <BottomTabBar {...this.props} activeTintColor={this.props.theme} />
 	}
 }
 

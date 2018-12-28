@@ -45,7 +45,6 @@ export default class PopularPage extends Component {
 class PopularTab extends Component {
 	render() {
 		const { tabLabel } = this.props;
-		console.log(this.props)
 		return (
 			<View style={styles.container}>
 				<Text style={styles.welcome}>{tabLabel}</Text>
