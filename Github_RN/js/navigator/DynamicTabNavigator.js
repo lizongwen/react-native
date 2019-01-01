@@ -8,7 +8,6 @@ import { BottomTabBar } from 'react-navigation-tabs'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
-// type Props = {};
 import PopularPage from '../page/PopularPage';
 import TrendingPage from '../page/TrendingPage';
 import FavoritePage from '../page/FavoritePage';
