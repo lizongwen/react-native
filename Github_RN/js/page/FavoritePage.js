@@ -28,10 +28,10 @@ class FavoritePage extends Component {
 
 
 const mapStateToProps = state => ({});
-const mapDispatchToprops=dispatch=>({
-	onThemeChange:theme=>dispatch(actions.onThemeChange(theme))
+const mapDispatchToprops = dispatch => ({
+	onThemeChange: theme => dispatch(actions.onThemeChange(theme))
 })
-export default connect(mapStateToProps,mapDispatchToprops)(FavoritePage);
+export default connect(mapStateToProps, mapDispatchToprops)(FavoritePage);
 
 const styles = StyleSheet.create({
 	container: {
