@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,Button } from 'react-native';
 import { createMaterialTopTabNavigator, createAppContainer } from "react-navigation";
 import NavigationUtil from './../navigator/NavigationUtil';
 // type Props = {};
@@ -51,6 +51,17 @@ class PopularTab extends Component {
 				<Text onPress={() => {
 					NavigationUtil.goPage({ aa: 111 }, 'DetailPage')
 				}}>跳转到详情页</Text>
+				<Button 
+					title={"Fetch使用"}
+					onPress={() => {
+					NavigationUtil.goPage({ aa: 111 }, 'FetchDemo')
+				}}/>
+				<Button 
+					title={"asyncStorage使用"}
+					onPress={() => {
+					NavigationUtil.goPage({ aa: 111 }, 'AsyncStorageDemoPage')
+				}}/>
+				
 			</View>
 		);
 	}

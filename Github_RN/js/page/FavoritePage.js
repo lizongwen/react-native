@@ -17,10 +17,10 @@ class FavoritePage extends Component {
 							updateTime: new Date().getTime()
 						}
 					})
-				}}></Button> */}
+				}}/> */}
 				<Button title="改变主题色" onPress={() => {
 					this.props.onThemeChange('red');
-				}}></Button>
+				}}/>
 			</View>
 		);
 	}

@@ -2,6 +2,8 @@ import { createStackNavigator, createSwitchNavigator, createAppContainer } from 
 import WelcomePage from '../page/WelcomePage';
 import HomePage from '../page/HomePage';
 import DetailPage from '../page/DetailPage';
+import FetchDemo from '../page/FetchDemo';
+import AsyncStorageDemoPage from '../page/AsyncStorageDemoPage';
 import { connect } from 'react-redux';
 import { createReactNavigationReduxMiddleware, reduxifyNavigator } from 'react-navigation-redux-helpers'
 
@@ -16,14 +18,28 @@ const InitNavigator = createStackNavigator({
 	}
 });
 const MainNavigator = createStackNavigator({
+	DetailPage: {
+		screen: DetailPage,
+		navigationOptions:{
+			headerBackTitle: '返回哈哈'
+		}
+	},
 	HomePage: {
 		screen: HomePage,
 		navigationOptions: {
-			header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+			// header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+		}
+	
+	},
+	
+	FetchDemo: {
+		screen: FetchDemo,
+		navigationOptions: {
+
 		}
 	},
-	DetailPage: {
-		screen: DetailPage,
+	AsyncStorageDemoPage:{
+		screen: AsyncStorageDemoPage,
 		navigationOptions: {
 
 		}
