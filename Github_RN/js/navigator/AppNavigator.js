@@ -4,6 +4,7 @@ import HomePage from '../page/HomePage';
 import DetailPage from '../page/DetailPage';
 import FetchDemo from '../page/FetchDemo';
 import AsyncStorageDemoPage from '../page/AsyncStorageDemoPage';
+import DataStorageDemoPage from '../page/DataStorageDemoPage';
 import { connect } from 'react-redux';
 import { createReactNavigationReduxMiddleware, reduxifyNavigator } from 'react-navigation-redux-helpers'
 
@@ -18,12 +19,7 @@ const InitNavigator = createStackNavigator({
 	}
 });
 const MainNavigator = createStackNavigator({
-	DetailPage: {
-		screen: DetailPage,
-		navigationOptions:{
-			headerBackTitle: '返回哈哈'
-		}
-	},
+	
 	HomePage: {
 		screen: HomePage,
 		navigationOptions: {
@@ -31,7 +27,12 @@ const MainNavigator = createStackNavigator({
 		}
 	
 	},
-	
+	DetailPage: {
+		screen: DetailPage,
+		navigationOptions:{
+			headerBackTitle: '返回哈哈'
+		}
+	},
 	FetchDemo: {
 		screen: FetchDemo,
 		navigationOptions: {
@@ -40,6 +41,12 @@ const MainNavigator = createStackNavigator({
 	},
 	AsyncStorageDemoPage:{
 		screen: AsyncStorageDemoPage,
+		navigationOptions: {
+
+		}
+	},
+	DataStorageDemoPage:{
+		screen: DataStorageDemoPage,
 		navigationOptions: {
 
 		}
