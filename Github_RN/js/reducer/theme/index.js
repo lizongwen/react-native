@@ -10,9 +10,7 @@ export default function onAction(state = defaultState, action) {
 				...state,
 				theme: action.theme
 			}
-			break;
 		default:
 			return state;
-			break;
 	}
 }
