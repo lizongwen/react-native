@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { FlatList, StyleSheet, Text, View, Button,RefreshControl } from 'react-native';
 import { connect } from 'react-redux';
 import actions from '../action/index';
+import PopularItem from '../common/PopularItem';
 import { createMaterialTopTabNavigator, createAppContainer } from "react-navigation";
 import NavigationUtil from './../navigator/NavigationUtil';
 const URL = 'https://api.github.com/search/repositories?q=';
@@ -65,11 +66,17 @@ class PopularTab extends Component {
 	}
 	renderItem(data){
 		const item=data.item
-		return <View style={{marginBottom:10}}>
-			<Text style={{backgroundColor:'#faa'}}>
-				{JSON.stringify(item)}
-			</Text>
-		</View>
+		// return <View style={{marginBottom:10}}>
+		// 	<Text style={{backgroundColor:'#faa'}}>
+		// 		{JSON.stringify(item)}
+		// 	</Text>
+		// </View>
+		return <PopularItem
+			item={item}
+			onSelect={()=>{
+
+			}}
+		/>
 	}
 	render() {
 		const { popular } = this.props;
@@ -130,25 +137,25 @@ const PopularTabPage = connect(mapStateToProps, mapDispatchToprops)(PopularTab);
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-		backgroundColor: '#F5FCFF',
+		// justifyContent: 'center',
+		// alignItems: 'center',
+		// backgroundColor: '#F5FCFF',
 	},
-	welcome: {
-		fontSize: 20,
-		textAlign: 'center',
-		margin: 10,
-	},
-	tabStyle: {
-		minWidth: 50
-	},
-	indicatorStyle: {
-		height: 2,
-		backgroundColor: '#fff'
-	},
-	labelStyle: {
-		fontSize: 13,
-		marginTop: 6,
-		marginBottom: 6
-	}
+	// welcome: {
+	// 	fontSize: 20,
+	// 	textAlign: 'center',
+	// 	margin: 10,
+	// },
+	// tabStyle: {
+	// 	minWidth: 50
+	// },
+	// indicatorStyle: {
+	// 	height: 2,
+	// 	backgroundColor: '#fff'
+	// },
+	// labelStyle: {
+	// 	fontSize: 13,
+	// 	marginTop: 6,
+	// 	marginBottom: 6
+	// }
 });
