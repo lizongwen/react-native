@@ -8,9 +8,6 @@ import NavigationUtil from '../navigator/NavigationUtil';
 import DynamicTabNavigator from '../navigator/DynamicTabNavigator';
 
 class HomePage extends Component {
-	static navigationOptions={
-		headerBackTitle:'haha'
-	}
 	componentDidMount() {
 		BackHandler.addEventListener("hardwareBackPress", this.onBackPress);
 	}

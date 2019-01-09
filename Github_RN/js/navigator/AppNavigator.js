@@ -14,7 +14,7 @@ const InitNavigator = createStackNavigator({
 		screen: WelcomePage,
 		navigationOptions: {
 			title: 'WelcomePage',
-			// header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+			header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
 		}
 	}
 });
@@ -23,7 +23,7 @@ const MainNavigator = createStackNavigator({
 	HomePage: {
 		screen: HomePage,
 		navigationOptions: {
-			// header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
+			header: null,// 可以通过将header设为null 来禁用StackNavigator的Navigation Bar
 		}
 	
 	},
