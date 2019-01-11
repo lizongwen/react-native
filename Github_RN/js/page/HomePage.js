@@ -3,7 +3,6 @@ import { BackHandler } from 'react-native';
 import { NavigationActions } from "react-navigation";
 import { connect } from 'react-redux';
 
-// type Props = {};
 import NavigationUtil from '../navigator/NavigationUtil';
 import DynamicTabNavigator from '../navigator/DynamicTabNavigator';
 

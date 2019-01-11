@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import NavigationUtil from '../navigator/NavigationUtil';
 
-// type Props = {};
 export default class DetailPage extends Component {
 	static navigationOptions = {
         title: 'DetailPage1',

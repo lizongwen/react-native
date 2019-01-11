@@ -5,16 +5,16 @@ import { middleware } from '../navigator/AppNavigator';
 
 const logger = store => next => action => {
 	if (typeof action === 'function') {
-		console.log('dispatching a function')
+		// console.log('dispatching a function')
 	} else {
-		console.log('dispatching a function');
+		// console.log('dispatching a function');
 	}
 	const result = next(action);
-	console.log('nextState', store.getState())
+	// console.log('nextState', store.getState())
 }
 
 const middlewares = [middleware, logger, thunk];
 const store = createStore(reducers, applyMiddleware(...middlewares))
-console.log(store.getState())
+// console.log(store.getState())
 // export default store;
 export default store

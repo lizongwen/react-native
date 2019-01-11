@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, View, Button, TextInput,PixelRatio } from 'react-native';
 
-// type Props = {};
 export default class FetchDemo extends Component {
 	constructor(props) {
 		super(props);

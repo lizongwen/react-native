@@ -14,19 +14,18 @@ YellowBox.ignoreWarnings(['Remote debugger']);
 
 export default class WelcomePage extends Component {
 	componentDidMount() {
-		this.time = setTimeout(() => {
-			NavigationUtil.resetToHomePage({
-				navigation:this.props.navigation
-			});
-		}, 1000)
 	}
 	componentWillUnmount() {
-		this.timer && clearTimeout(this.timer)
+	}
+	goHomePage(){
+		NavigationUtil.resetToHomePage({
+			navigation:this.props.navigation
+		});
 	}
 	render() {
 		return (
 			<View style={styles.container}>
-				<Text style={styles.welcome}>欢迎进入欢迎页面</Text>
+				<Text style={styles.welcome} onPress={()=>this.goHomePage()}>欢迎进入欢迎页面,点击进入</Text>
 			</View>
 		);
 	}

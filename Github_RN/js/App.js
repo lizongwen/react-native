@@ -4,10 +4,9 @@ import AppNavigator from './navigator/AppNavigator'
 import store from './store';
 
 
-// type Props = {};
 export default class App extends Component {
 	componentDidMount() {
-		console.log(this.props)
+		// console.log(this.props)
 	}
 	render() {
 		return <Provider store={store}>
