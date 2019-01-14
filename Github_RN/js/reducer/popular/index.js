@@ -4,16 +4,18 @@ const defaultState = {}
 
 export default function onAction(state = defaultState, action) {
 	switch (action.type) {
-		case Types.LOAD_POPULAR_SUCCESS:
+		case Types.POPULAR_REFRESH_SUCCESS:
 			return {
 				...state,
 				[action.storeName]: {
 					...state[action.storeName],
-					items: action.items,
-					isLoading: false
+					items:action.items,
+					projectModels: action.projectModels,
+					isLoading: false,
+					hideLoadingMore: false,
 				},
 			}
-		case Types.LOAD_POPULAR_FAIL:
+		case Types.POPULAR_REFRESH_FAIL:
 			return {
 				...state,
 				[action.storeName]: {
@@ -26,7 +28,27 @@ export default function onAction(state = defaultState, action) {
 				...state,
 				[action.storeName]: {
 					...state[action.storeName],
-					isLoading: true
+					isLoading: true,
+					hideLoadingMore: true
+				},
+			}
+		case Types.POPULAR_LOAD_MORE_SUCCESS:
+			return {
+				...state,
+				[action.storeName]: {
+					...state[action.storeName],
+					projectModels: action.projectModels,
+					hideLoadMore:false,
+					pageIndex:action.pageIndex
+				},
+			}
+		case Types.POPULAR_LOAD_MORE_FAIL:
+			return {
+				...state,
+				[action.storeName]: {
+					...state[action.storeName],
+					hideLoadMore:false,
+					pageIndex:action.pageIndex
 				},
 			}
 		default:
